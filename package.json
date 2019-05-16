@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jianghaoran116/webpack#readme",
   "devDependencies": {
+    "url-loader": "^1.1.2",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   }
