@@ -2,9 +2,9 @@ const path = require('path');
 
 const output = (env, argv) => {
     return {
-        path: path.resolve(__dirname, '../bundle'),
-        filename: 'js/[name]-[hash:8].js',
-        chunkFilename: 'js/[name]-[chunkhash:8].js'
+        path: path.resolve(__dirname, '../dist'),
+        filename: '[name].js',
+        chunkFilename: '[name]-[chunkhash:8].js'
     }
 }
 
