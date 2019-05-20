@@ -13,6 +13,31 @@ const loaders = (env, argv) => {
 					}
 				}
 			]
+		},
+		{
+			test:  /\.less|\.css$/,
+			use: [
+				'style-loader', 
+				{
+					loader: 'css-loader',
+					options: {
+						'modules': true,
+						'localIdentName': '[hash:base64:5]'
+					}
+				},
+				{
+					loader: 'postcss-loader',
+					options: {
+						ident: 'postcss',
+						plugins: (loader) => [
+							require('autoprefixer')({
+								browsers: ['last 5 versions']
+							})
+						]
+					}
+				},
+				'less-loader'
+			]
 		}
 	]
 }
