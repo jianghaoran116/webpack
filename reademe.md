@@ -26,5 +26,3 @@
 import A from './A'
 import {A} from './A'
 ```
-
-"import a from './A'" 表示
