@@ -15,12 +15,21 @@ const loaders = (env, argv) => {
 			]
 		},
 		{
+			test: /\.(eot|svg|ttf|woff|woff2)\w*/,
+			use: [
+				{
+					loader: 'file-loader'
+				}
+			]
+		},
+		{
 			test:  /\.less|\.css$/,
 			use: [
 				'style-loader', 
 				{
 					loader: 'css-loader',
 					options: {
+						'importLoaders': 2,
 						'modules': true,
 						'localIdentName': '[hash:base64:5]'
 					}
