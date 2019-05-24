@@ -10,6 +10,7 @@ const resolve = require('./webpackConfig/resolve')
 const config =  (env, argv) => {
   return {
     mode: env,
+    devtool: (env=='development'?'cheap-module-eval-source-map':'cheap-module-source-map'),
     entry: entry(env, argv),
     output: output(env, argv),
     module: {

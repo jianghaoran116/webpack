@@ -26,3 +26,9 @@
 import A from './A'
 import {A} from './A'
 ```
+
+### sourcemap原理
+* https://segmentfault.com/a/1190000008315937
+* https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
+* http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html
+* https://www.youtube.com/watch?v=NkVes0UMe9Y

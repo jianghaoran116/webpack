@@ -3,7 +3,7 @@ const path = require('path');
 const output = (env, argv) => {
     return {
         path: path.resolve(__dirname, '../dist'),
-        filename: '[name].js',
+        filename: '[name]-[chunkhash:8].js',
         chunkFilename: '[name]-[chunkhash:8].js'
     }
 }
