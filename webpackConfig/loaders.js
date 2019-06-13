@@ -3,55 +3,37 @@ const path = require('path')
 const loaders = (env, argv) => {
 	return [
 		{
-			test: /\.(png|jpg|gif)$/,
-			use: [
-				{
-					loader: 'url-loader',
-					options: {
-						limit: 204800,
-						name: '[name].[ext]'
-					}
+			test: /\.(jpg|png|gif)$/,
+			use: {
+				loader: 'url-loader',
+				options: {
+					name: '[name]_[hash].[ext]',
+					outputPath: 'images/',
+					limit: 10240
 				}
-			]
-		},
-		{
-			test: /\.(eot|svg|ttf|woff|woff2)\w*/,
-			use: [
-				{
-					loader: 'file-loader'
-				}
-			]
-		},
-		{
-			test:  /\.less$/,
+			} 
+		}, {
+			test: /\.(eot|ttf|svg)$/,
+			use: {
+				loader: 'file-loader'
+			} 
+		}, {
+			test: /\.scss$/,
 			use: [
 				'style-loader', 
 				{
 					loader: 'css-loader',
 					options: {
-						'importLoaders': 2,
-						'modules': true,
-						'localIdentName': '[hash:base64:5]'
+						importLoaders: 2
 					}
 				},
-				{
-					loader: 'postcss-loader',
-					options: {
-						ident: 'postcss',
-						plugins: (loader) => [
-							require('autoprefixer')({
-								browsers: ['last 5 versions']
-							})
-						]
-					}
-				},
-				'less-loader'
+				'sass-loader',
+				'postcss-loader'
 			]
-		},
-		{
+		}, {
 			test: /\.css$/,
 			use: [
-				'style-loader', 
+				'style-loader',
 				'css-loader',
 				'postcss-loader'
 			]

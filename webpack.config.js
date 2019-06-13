@@ -23,8 +23,8 @@ const config =  (env, argv) => {
       contentBase: path.resolve(__dirname, './index.html'),
       open: true,
       port: 8383,
-      hot: true
-      // hotOnly: true
+      hot: true,
+      hotOnly: true
     }
   }
 }; 
