@@ -19,6 +19,13 @@ const config =  (env, argv) => {
     optimization: optimization(env, argv),
     plugins: plugins(env, argv),
     resolve: resolve(env, argv),
+    devServer: {
+      contentBase: path.resolve(__dirname, './index.html'),
+      open: true,
+      port: 8383,
+      hot: true
+      // hotOnly: true
+    }
   }
 }; 
 

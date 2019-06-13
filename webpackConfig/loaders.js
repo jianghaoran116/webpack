@@ -23,7 +23,7 @@ const loaders = (env, argv) => {
 			]
 		},
 		{
-			test:  /\.less|\.css$/,
+			test:  /\.less$/,
 			use: [
 				'style-loader', 
 				{
@@ -46,6 +46,14 @@ const loaders = (env, argv) => {
 					}
 				},
 				'less-loader'
+			]
+		},
+		{
+			test: /\.css$/,
+			use: [
+				'style-loader', 
+				'css-loader',
+				'postcss-loader'
 			]
 		}
 	]
