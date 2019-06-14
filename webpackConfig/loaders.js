@@ -23,7 +23,7 @@ const loaders = (env, argv) => {
 				loader: 'file-loader'
 			} 
 		}, {
-			test: /\.scss$/,
+			test: /\.less$/,
 			use: [
 				'style-loader', 
 				{
@@ -32,7 +32,7 @@ const loaders = (env, argv) => {
 						importLoaders: 2
 					}
 				},
-				'sass-loader',
+				'less-loader',
 				'postcss-loader'
 			]
 		}, {
