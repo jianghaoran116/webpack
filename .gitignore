@@ -5,6 +5,4 @@
 node_modules/
 bundle/
 dll/
-static/
-index.html
-/config.js
+dist/
