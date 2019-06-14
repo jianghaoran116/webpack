@@ -2,6 +2,11 @@ const path = require('path')
 
 const loaders = (env, argv) => {
 	return [
+		{ 
+			test: /\.js$/, 
+			exclude: /node_modules/, 
+			loader: "babel-loader" 
+		},
 		{
 			test: /\.(jpg|png|gif)$/,
 			use: {

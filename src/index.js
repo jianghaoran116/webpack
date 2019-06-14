@@ -1,40 +1,20 @@
-// import logo from './logo.png'
-// import style from './index.less'
+// import counter from './counter';
+// import number from './number';
 
-// let rootDom = document.getElementById('root');
-// let _div = document.createElement("div")
+// counter();
+// number();
 
-// let img = new Image()
-// img.src = logo;
-
-// let _frontP = document.createElement("p")
-// _frontP.className = "iconfont iconabacus"
-
-// let _button = document.createElement("button")
-// _button.innerHTML = 'add1'
-// _div.appendChild(_button)
-// _button.onclick = function() {
-//   let _div2 = document.createElement("div")
-//   _div2.className = `${style.test}`
-//   _div2.innerHTML = 'item1'
-//   rootDom.appendChild(_div2)
+// if(module.hot) {
+// 	module.hot.accept('./number', () => {
+// 		document.body.removeChild(document.getElementById('number'));
+// 		number();
+// 	})
 // }
-
-// _div.className = `${style.modCss}`
-// _div.appendChild(img)
-// _div.appendChild(_frontP)
-
-// rootDom.appendChild(_div)
-
-import counter from './counter';
-import number from './number';
-
-counter();
-number();
+import temp from './temp';
+temp()
 
 if(module.hot) {
-	module.hot.accept('./number', () => {
-		document.body.removeChild(document.getElementById('number'));
-		number();
+	module.hot.accept('./temp', () => {
+		temp();
 	})
 }
