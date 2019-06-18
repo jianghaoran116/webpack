@@ -17,13 +17,17 @@
 // 		temp();
 // 	})
 // }
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
+// import React, { Component } from 'react';
+// import ReactDom from 'react-dom';
 
-class App extends Component {
-	render() {
-		return <div>Hello World</div>
-	}
-}
+// class App extends Component {
+// 	render() {
+// 		return <div>Hello World</div>
+// 	}
+// }
 
-ReactDom.render(<App />, document.getElementById('root'));
+// ReactDom.render(<App />, document.getElementById('root'));
+
+import { add } from './match.js'
+
+add(1, 2)
