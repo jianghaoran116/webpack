@@ -28,25 +28,42 @@
 
 // ReactDom.render(<App />, document.getElementById('root'));
 
-import {Stack} from './helpers/dataStructure/Stack'
+// import {Stack} from './helpers/dataStructure/Stack'
 
-function divideBy2(decNumber){
+// function divideBy2(decNumber){
 
-  var remStack = new Stack(),
-    rem,
-    binaryString = '';
+//   var remStack = new Stack(),
+//     rem,
+//     binaryString = '';
 
-  while (decNumber > 0){ 
-    rem = Math.floor(decNumber % 2); 
-    remStack.push(rem); 
-    decNumber = Math.floor(decNumber / 2); 
-  }
+//   while (decNumber > 0){ 
+//     rem = Math.floor(decNumber % 2); 
+//     remStack.push(rem); 
+//     decNumber = Math.floor(decNumber / 2); 
+//   }
 
-  while (!remStack.isEmpty()){ 
-    binaryString += remStack.pop().toString();
-  }
+//   while (!remStack.isEmpty()){ 
+//     binaryString += remStack.pop().toString();
+//   }
 
-  return binaryString;
-}
+//   return binaryString;
+// }
 
-console.log(divideBy2(10))
+// console.log(divideBy2(10))
+
+
+// import {Queue} from './helpers/dataStructure/Queue'
+
+// let queue = new Queue()
+
+// queue.enqueue(2)
+// queue.print()
+
+
+import {PriorityQueue} from './helpers/dataStructure/PriorityQueue'
+
+let priorityQueue = new PriorityQueue()
+
+priorityQueue.enqueue(2, 1)
+priorityQueue.enqueue(3, 0)
+priorityQueue.print()
