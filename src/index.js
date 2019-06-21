@@ -22,7 +22,11 @@
 
 // class App extends Component {
 // 	render() {
-// 		return <div>Hello World</div>
+//     return(
+//       <div>
+//       123
+//       </div>
+//     )
 // 	}
 // }
 
@@ -68,12 +72,12 @@
 // priorityQueue.enqueue(3, 0)
 // priorityQueue.print()
 
-import {DoublyLinkedList} from './helpers/dataStructure/DoublyLinkedList'
+// import {DoublyLinkedList} from './helpers/dataStructure/DoublyLinkedList'
 
-let linkedList = new DoublyLinkedList()
-linkedList.append(145)
-linkedList.append(15)
-console.log(linkedList)
-console.log(linkedList.toString())
-console.log(linkedList.remove(15))
-console.log(linkedList.toString())
+// let linkedList = new DoublyLinkedList()
+// linkedList.append(145)
+// linkedList.append(15)
+// console.log(linkedList)
+// console.log(linkedList.toString())
+// console.log(linkedList.remove(15))
+// console.log(linkedList.toString())
