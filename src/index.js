@@ -17,16 +17,16 @@
 // 		temp();
 // 	})
 // }
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
+// import React, { Component } from 'react';
+// import ReactDom from 'react-dom';
 
-class App extends Component {
-	render() {
-		return <div>Hello World</div>
-	}
-}
+// class App extends Component {
+// 	render() {
+// 		return <div>Hello World</div>
+// 	}
+// }
 
-ReactDom.render(<App />, document.getElementById('root'));
+// ReactDom.render(<App />, document.getElementById('root'));
 
 // import {Stack} from './helpers/dataStructure/Stack'
 
@@ -68,8 +68,11 @@ ReactDom.render(<App />, document.getElementById('root'));
 // priorityQueue.enqueue(3, 0)
 // priorityQueue.print()
 
-// import {LinkedList} from './helpers/dataStructure/LinkedList'
+import {LinkedList} from './helpers/dataStructure/LinkedList'
 
-// let linkedList = new LinkedList()
-// linkedList.append(145)
-// linkedList.append(15)
+let linkedList = new LinkedList()
+linkedList.append(145)
+linkedList.append(15)
+console.log(linkedList.toString())
+console.log(linkedList.remove(15))
+console.log(linkedList.toString())
