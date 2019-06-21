@@ -73,7 +73,6 @@ export class LinkedList{
   };
   remove(element){
     let index = this.indexOf(element);
-    console.log(index)
     return this.removeAt(index);
   };
   indexOf(element){  

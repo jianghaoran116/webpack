@@ -68,11 +68,12 @@
 // priorityQueue.enqueue(3, 0)
 // priorityQueue.print()
 
-import {LinkedList} from './helpers/dataStructure/LinkedList'
+import {DoublyLinkedList} from './helpers/dataStructure/DoublyLinkedList'
 
-let linkedList = new LinkedList()
+let linkedList = new DoublyLinkedList()
 linkedList.append(145)
 linkedList.append(15)
+console.log(linkedList)
 console.log(linkedList.toString())
 console.log(linkedList.remove(15))
 console.log(linkedList.toString())
