@@ -15,6 +15,7 @@
         "regenerator": true,
         "useESModules": false
       }
-    ]
+    ],
+    ["babel-plugin-dynamic-import-webpack"]
   ]
 }
