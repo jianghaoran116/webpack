@@ -9,7 +9,9 @@ const plugins = (env, argv) => {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html')
         }),
-		new CleanWebpackPlugin([`${path.resolve(__dirname, '../')}dist`]),
+		new CleanWebpackPlugin([`dist`], {
+            root: path.resolve(__dirname, '../')
+        }),
         // new webpack.NamedModulesPlugin(),
 		new webpack.HotModuleReplacementPlugin()
     ]
