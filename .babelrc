@@ -1,21 +1,14 @@
 {
-  "presets": [
-    ["@babel/preset-env", {
-      "useBuiltIns": "usage"
-    }],
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        "absoluteRuntime": false,
-        "corejs": 2,
-        "helpers": true,
-        "regenerator": true,
-        "useESModules": false
-      }
-    ],
-    ["babel-plugin-dynamic-import-webpack"]
-  ]
+	"presets": [
+		[
+			"@babel/preset-env", {
+				"targets": {
+					"chrome": "67",
+				},
+				"useBuiltIns": "usage"
+			}
+		],
+		"@babel/preset-react"
+	],
+	"plugins": ["@babel/plugin-syntax-dynamic-import"]
 }
