@@ -26,26 +26,6 @@ module.exports = {
 			use: {
 				loader: 'file-loader'
 			} 
-		}, {
-			test: /\.scss$/,
-			use: [
-				'style-loader', 
-				{
-					loader: 'css-loader',
-					options: {
-						importLoaders: 2
-					}
-				},
-				'sass-loader',
-				'postcss-loader'
-			]
-		}, {
-			test: /\.css$/,
-			use: [
-				'style-loader',
-				'css-loader',
-				'postcss-loader'
-			]
 		}]
 	},
 	plugins: [
@@ -57,6 +37,7 @@ module.exports = {
 		})
 	],
 	optimization: {
+		usedExports: true, //tree shaking
 		splitChunks: {
       chunks: 'all',
       minSize: 30000,
@@ -81,6 +62,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].js',
+		chunkFilename: '[name].chunk.js',
 		path: path.resolve(__dirname, '../dist')
 	}
 }

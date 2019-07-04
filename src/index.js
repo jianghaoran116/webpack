@@ -11,8 +11,16 @@
 // 	});
 // })
 
+import './style.css'
+
 document.addEventListener('click', () =>{
 	import(/* webpackPrefetch: true */ './click.js').then(({default: func})=>{
 		func()
 	})
 })
+
+// document.addEventListener('click', () =>{
+// 	const element = document.createElement('div');
+// 	element.innerHTML = 'Dell', 'Lee';
+// 	document.body.appendChild(element);
+// })
