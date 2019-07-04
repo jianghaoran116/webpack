@@ -11,7 +11,7 @@
 // 	});
 // })
 
-import './style.css'
+import style from './style.css'
 
 document.addEventListener('click', () =>{
 	import(/* webpackPrefetch: true */ './click.js').then(({default: func})=>{

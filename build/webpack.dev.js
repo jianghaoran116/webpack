@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const commonConfig = require('./webpack.common.js');
 
 const devConfig = {
@@ -12,27 +13,34 @@ const devConfig = {
 		hot: true
 	},
 	module: {
-		rules: [{
-			test: /\.scss$/,
-			use: [
-				'style-loader', 
-				{
-					loader: 'css-loader',
-					options: {
-						importLoaders: 2
-					}
-				},
-				'sass-loader',
-				'postcss-loader'
-			]
-		}, {
-			test: /\.css$/,
-			use: [
-				'style-loader',
-				'css-loader',
-				'postcss-loader'
-			]
-		}]
+		rules: [
+			{
+				test: /\.scss$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 2
+						}
+					},
+					'sass-loader',
+					'postcss-loader'
+				]
+			}, {
+				test: /\.css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: true
+						}
+					},
+					'css-loader',
+					'postcss-loader'
+				]
+			}
+		]
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
