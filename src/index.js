@@ -11,16 +11,23 @@
 // 	});
 // })
 
-import style from './style.css'
+// import style from './style.css'
 
-document.addEventListener('click', () =>{
-	import(/* webpackPrefetch: true */ './click.js').then(({default: func})=>{
-		func()
-	})
-})
+// document.addEventListener('click', () =>{
+// 	import(/* webpackPrefetch: true */ './click.js').then(({default: func})=>{
+// 		func()
+// 	})
+// })
 
 // document.addEventListener('click', () =>{
 // 	const element = document.createElement('div');
 // 	element.innerHTML = 'Dell', 'Lee';
 // 	document.body.appendChild(element);
 // })
+
+import $ from 'jquery';
+import _ from 'lodash';
+
+const dom = $('<div>');
+dom.html(_.join(['dell', 'lee'], '+++'));
+$('body').append(dom);
