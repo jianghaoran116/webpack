@@ -1,25 +1,25 @@
 {
-  "name": "webpacklib",
+  "name": "jhr-data-structure",
   "version": "1.0.0",
-  "description": "",
-  "main": "./dist/library.js",
+  "main": "./dist/dast.js",
   "scripts": {
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jianghaoran116/webpacklib.git"
+    "url": "git+https://github.com/jianghaoran116/webpack.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jianghaoran116/webpacklib/issues"
+    "url": "https://github.com/jianghaoran116/webpack/issues"
   },
-  "homepage": "https://github.com/jianghaoran116/webpacklib#readme",
+  "homepage": "https://github.com/jianghaoran116/webpack#readme",
   "dependencies": {
     "lodash": "^4.17.11",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
-  }
+  },
+  "description": ""
 }
