@@ -25,9 +25,12 @@
 // 	document.body.appendChild(element);
 // })
 
-import $ from 'jquery';
-import _ from 'lodash';
+// import $ from 'jquery';
+// import _ from 'lodash';
 
-const dom = $('<div>');
-dom.html(_.join(['dell', 'lee'], '+++'));
-$('body').append(dom);
+// const dom = $('<div>');
+// dom.html(_.join(['dell', 'lee'], '+++'));
+// $('body').append(dom);
+
+console.log(this)
+console.log(this==window)
