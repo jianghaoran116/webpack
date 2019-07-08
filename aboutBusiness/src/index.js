@@ -32,5 +32,10 @@
 // dom.html(_.join(['dell', 'lee'], '+++'));
 // $('body').append(dom);
 
-console.log(this)
-console.log(this==window)
+// console.log(this)
+// console.log(this==window)
+
+import dast from 'jhr-data-structure'
+const BinarySearchTree = dast.BinarySearchTree.BinarySearchTree
+
+var tree = new BinarySearchTree();
