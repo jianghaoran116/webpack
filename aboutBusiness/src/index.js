@@ -1,41 +1,20 @@
-// async function getComponent() {
-// 	const { default: _ } = await import(/* webpackChunkName:"lodash" */ 'lodash');
-// 	const element = document.createElement('div');
-// 	element.innerHTML = _.join(['Dell', 'Lee'], '-');
-// 	return element;
-// }
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import ReactDom from 'react-dom';
+import Home from './home.js';
+import List from './list.js';
 
-// document.addEventListener('click', () =>{
-// 	getComponent().then(element => {
-// 		document.body.appendChild(element);
-// 	});
-// })
+class App extends Component {
+	render() {
+		return (
+			<BrowserRouter>
+				<div>
+					<Route path='/' exact component={Home}/>
+					<Route path='/list' component={List}/>
+				</div>
+			</BrowserRouter>
+		)
+	}
+}
 
-// import style from './style.css'
-
-// document.addEventListener('click', () =>{
-// 	import(/* webpackPrefetch: true */ './click.js').then(({default: func})=>{
-// 		func()
-// 	})
-// })
-
-// document.addEventListener('click', () =>{
-// 	const element = document.createElement('div');
-// 	element.innerHTML = 'Dell', 'Lee';
-// 	document.body.appendChild(element);
-// })
-
-// import $ from 'jquery';
-// import _ from 'lodash';
-
-// const dom = $('<div>');
-// dom.html(_.join(['dell', 'lee'], '+++'));
-// $('body').append(dom);
-
-// console.log(this)
-// console.log(this==window)
-
-import dast from 'jhr-data-structure'
-const BinarySearchTree = dast.BinarySearchTree.BinarySearchTree
-
-var tree = new BinarySearchTree();
+ReactDom.render(<App />, document.getElementById('root'));

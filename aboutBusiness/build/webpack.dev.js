@@ -11,6 +11,7 @@ const devConfig = {
 		open: true,
 		port: 8383,
 		hot: true,
+		historyApiFallback: true,
 		// proxy: {
 		// 	'xxx': {
 		// 		'target': 'xxx',
