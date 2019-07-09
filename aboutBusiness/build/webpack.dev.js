@@ -10,7 +10,21 @@ const devConfig = {
 		contentBase: './dist',
 		open: true,
 		port: 8383,
-		hot: true
+		hot: true,
+		// proxy: {
+		// 	'xxx': {
+		// 		'target': 'xxx',
+		// 		'secure': false, //https
+		// 		'pathRewrite': {
+		// 			'xxx': 'xxx'
+		// 		},
+		// 		'changeOrigin': true,
+		// 		'header': {
+		// 			host: '',
+		// 			cookie: ''
+		// 		}
+		// 	}
+		// }
 	},
 	module: {
 		rules: [
