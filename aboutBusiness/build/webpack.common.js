@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+console.log(path.resolve(__dirname, '../src/components'));
+
 module.exports = {
   entry: {
     main: './src/index.jsx',
@@ -11,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         // loader: 'babel-loader',
         use: ['babel-loader', 'eslint-loader'],
@@ -83,6 +85,11 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
   },
   resolve: {
-    extensions: ['.css', '.sass', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
+    alias: {
+      components: path.resolve(__dirname, '../src/components'),
+      containers: path.resolve(__dirname, '../src/containers'),
+    },
+    // mainFiles: ['index'], // 路径下的默认文件
   },
 };
