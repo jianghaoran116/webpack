@@ -4,8 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-console.log(path.resolve(__dirname, '../src/components'));
-
 module.exports = {
   entry: {
     main: './src/index.jsx',
