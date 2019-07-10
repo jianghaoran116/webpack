@@ -1,8 +1,42 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: 'src/index.html',
+  }),
+  new CleanWebpackPlugin(['dist'], {
+    root: path.resolve(__dirname, '../'),
+  }),
+  new MiniCssExtractPlugin({
+    // Options similar to the same options in webpackOptions.output
+    // both options are optional
+    filename: '[name].css',
+    chunkFilename: '[id].css',
+  }),
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+  }),
+];
+
+const files = fs.readdirSync(path.resolve(__dirname, '../dll'));
+files.forEach((file) => {
+  if (/.*\.dll.js/.test(file)) {
+    plugins.push(new AddAssetHtmlWebpackPlugin({
+      filepath: path.resolve(__dirname, '../dll', file),
+    }));
+  }
+  if (/.*\.manifest.json/.test(file)) {
+    plugins.push(new webpack.DllReferencePlugin({
+      manifest: path.resolve(__dirname, '../dll', file),
+    }));
+  }
+});
 
 module.exports = {
   entry: {
@@ -35,23 +69,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, '../'),
-    }),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-    }),
-  ],
+  plugins,
   optimization: {
     usedExports: true, // tree shaking
     splitChunks: {

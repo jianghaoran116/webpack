@@ -12,7 +12,9 @@
     "dev:analysis": "webpack --config ./build/webpack.dev.js --profile --json > stats.json",
     "dev:server:analyzer": "webpack-dev-server --config ./build/webpack.dev.js --inline --progress --devserver --analyzer",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
-    "build": "webpack --config ./build/webpack.prod.js"
+    "build": "webpack --config ./build/webpack.prod.js",
+    "build:dll:dev": "cross-env NODE_ENV=development webpack --config ./build/webpack.dll.js",
+    "build:dll:prod": "cross-env NODE_ENV=production webpack --config ./build/webpack.dll.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +27,7 @@
     "autoprefixer": "^9.3.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
@@ -48,17 +51,17 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/runtime": "^7.2.0",
     "@babel/runtime-corejs2": "^7.2.0",
-    "html-webpack-plugin": "^3.2.0",
+    "add-asset-html-webpack-plugin": "^3.1.3",
     "clean-webpack-plugin": "^1.0.0",
-    "mini-css-extract-plugin": "^0.7.0",
-    "jquery": "^3.3.1",
+    "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.7.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.0.1",
+    "terser-webpack-plugin": "^1.3.0",
     "webpack": "^4.25.1",
-    "webpack-merge": "^4.1.5",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "terser-webpack-plugin": "^1.3.0"
+    "webpack-merge": "^4.1.5"
   }
 }

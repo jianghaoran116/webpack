@@ -23,8 +23,9 @@ module.exports = {
     'react',
   ],
   rules: {
-    "react/prefer-stateless-function": 0,
-    "no-console": 0,
-    "import/no-unresolved": 0,
+    'react/prefer-stateless-function': 0,
+    'no-console': 0,
+    'import/no-unresolved': 0,
+    'linebreak-style': 0,
   },
 };
