@@ -31,40 +31,60 @@ const devConfig = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2
-            }
-          },
-          'sass-loader',
-          'postcss-loader'
-        ]
-      }, {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: true
-            }
+              hmr: true,
+            },
           },
-          'css-loader',
-          'postcss-loader'
-        ]
-      }
-    ]
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: true,
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     // MiniCssExtractPlugin.loader,
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         importLoaders: 2,
+      //       },
+      //     },
+      //     'sass-loader',
+      //     'postcss-loader',
+      //   ],
+      // }, {
+      //   test: /\.css$/,
+      //   use: [
+      //     // {
+      //     //   loader: MiniCssExtractPlugin.loader,
+      //     //   options: {
+      //     //     hmr: true,
+      //     //   },
+      //     // },
+      //     'css-loader',
+      //     'postcss-loader',
+      //   ],
+      // },
+    ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
     filename: '[name].js',
-    chunkFilename: '[name].chunk.js'
-  }
-}
+    chunkFilename: '[name].chunk.js',
+  },
+};
 
 module.exports = merge(commonConfig, devConfig);
