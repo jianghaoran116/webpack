@@ -1,1 +1,1 @@
-export const world = "world"
+export const word = 'hello';

@@ -37,13 +37,9 @@
     "eslint-plugin-react": "^7.14.2",
     "express": "^4.16.4",
     "file-loader": "^2.0.0",
-<<<<<<< HEAD
     "html-webpack-plugin": "^3.2.0",
-    "jhr-data-structure": "^1.0.0",
     "mini-css-extract-plugin": "^0.7.0",
-=======
     "jhr-data-structure": "^1.0.1",
->>>>>>> a0294478d856d81a184c190907d116ec0ed3bfc6
     "node-sass": "^4.10.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
